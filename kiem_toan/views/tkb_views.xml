@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_details_tkb_form" model="ir.ui.view">
+            <field name="name">details_tkb.form</field>
+            <field name="model">details.tkb</field>
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <form string="Tổng Chấm cômg trong tháng">
+                    <group>
+                        <field name="date_tkb"/>
+                        <field name="time_tkb"/>
+                        <field name="ref_event"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_details_tkb_tree" model="ir.ui.view">
+            <field name="name">details_tkb.tree</field>
+            <field name="model">details.tkb</field>
+            <field name="priority" eval="10"/>
+            <field name="arch" type="xml">
+                <tree string="Thời khoá biểu">
+                    <field name="date_tkb"/>
+                    <field name="time_tkb"/>
+                    <field name="ref_event"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

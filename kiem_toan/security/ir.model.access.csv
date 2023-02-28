@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
-access_quang_cao_seo_web_user,seo.web.user,model_seo_web,base.group_user,1,1,1,1
+access_group_event_event_user,event.event.user,model_event_event,base.group_user,1,1,1,1
+access_group_event_event_root,event.event.root,model_event_event,base.group_system,1,1,1,1
+
+access_group_details_tkb_user,details.tkb.user,model_details_tkb,base.group_user,1,1,1,1
+access_group_details_tkb_root,details.tkb.root,model_details_tkb,base.group_system,1,1,1,1

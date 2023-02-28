@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_zalo_form_inherit" model="ir.ui.view">
+            <field name="name">event.registration.form.inherit</field>
+            <field name="model">event.registration</field>
+            <field name="priority" eval="10"/>
+            <field name="inherit_id" ref="event.view_event_registration_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group/field[@name='phone']" position="after">
+                    <field name="zalo_link" widget="url"/>
+                </xpath>
+                <xpath expr="//sheet/group/group/field[@name='mobile']" position="replace">
+
+                </xpath>
+                <xpath expr="//sheet/group/group/field[@name='date_closed']" position="after">
+                    <field name="is_dat"/>
+                </xpath>
+                <xpath expr="//header/field[@name='state']" position="after">
+                    <button name="confirm_dat" string="XN Đạt chứng chỉ" type="object" class="oe_highlight"/>
+                    <button name="confirm_k_dat" string="XN Huỷ chứng chỉ" type="object"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="event_registration_kanban_inehrit" model="ir.ui.view">
+            <field name="name">event.registration.kanban.inehrit</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event.event_registration_view_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="is_dat"/>
+                </xpath>
+
+                <xpath expr="//div[hasclass('o_kanban_record_body')]" position="inside">
+                    <t t-if="record.is_dat.raw_value == '0'">
+                        <b class="o_kanban_record_title text-danger">
+                        <field name="is_dat"/>
+                    </b>
+                    </t>
+                    <t t-if="record.is_dat.raw_value == '1'">
+                        <b class="o_kanban_record_title text-success">
+                        <field name="is_dat"/>
+                    </b>
+                    </t>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_zalo_tree_inherit" model="ir.ui.view">
+            <field name="name">event.registration.tree.inherit</field>
+            <field name="model">event.registration</field>
+            <field name="priority" eval="10"/>
+            <field name="inherit_id" ref="event.view_event_registration_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="is_dat"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

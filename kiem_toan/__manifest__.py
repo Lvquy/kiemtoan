@@ -13,11 +13,14 @@
         #data
 
         # security
-        # 'security/groups.xml',
-        # 'security/ir.model.access.csv',
+        'security/groups.xml',
+        'security/ir.model.access.csv',
         # report
         # views
         'views/custom_footer.xml',
+        'views/event_views.xml',
+        'views/tkb_views.xml',
+        'views/zalo_link_views.xml',
     ],
 
     'assets': {
